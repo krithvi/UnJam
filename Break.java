@@ -1,45 +1,47 @@
 package com.company;
 
-public class Session<synchronised> implements Runnable
+public class Break implements Runnable
 {
     Thread thread;
     //Pattern p;
 
-
-    Session()
+    Break()
     {
         //this.p = p;
-        thread = new Thread(this, "session thread");
+        thread = new Thread(this, "break thread");
         thread.start();
-
     }
+
 
 
     @Override
     public void run()
     {
-        fun();
-
+        call();
+        //while(true)
+        //{
+          //  p.wall2();
+        //}
     }
 
     public void start()
     {
 
-
-
     }
 
-    synchronized void fun()
+    synchronized void call()
     {
 
         try {
+
             for (int i = 5; i > 0; i--)
             {
-                System.out.println(i);
+                System.out.println("-");
                 Thread.sleep(1000);
             }
         }
-        catch (InterruptedException e)
+
+        catch(InterruptedException e)
         {
             System.out.println(e);
         }
